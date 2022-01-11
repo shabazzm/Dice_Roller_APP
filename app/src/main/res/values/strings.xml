@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dice Roller</string>
-    <string name="Roll">Roll</string>
+    <string name="app_name">Coin Flip/Dice Roll Simulator</string>
+    <string name="Roll">Roll Dice</string>
     <string name="flip_coin">Flip Coin</string>
 </resources>

@@ -2,7 +2,7 @@ package com.example.diceroller
 
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -20,14 +20,14 @@ class MainActivity : AppCompatActivity() {
     private fun flipCoin() {
         val coin = Coin()
         val coinFlip = coin.flip()
-        val headsText = "Heads"
-        val tailsText = "Tails"
-        val resultTextView2: TextView = findViewById(R.id.textView2)
-        if (coinFlip == 1) {
-            resultTextView2.text = headsText
-        } else {
-            resultTextView2.text = tailsText
+        // show results of roll on screen
+        val coinImage: ImageView = findViewById(R.id.imageView2)
+        val drawableResource2 = when (coinFlip){
+            1 -> (R.drawable.heads_flip)
+            else-> (R.drawable.tails_flip)
         }
+
+        coinImage.setImageResource(drawableResource2)
 
     }
 
@@ -36,8 +36,17 @@ class MainActivity : AppCompatActivity() {
         val dice = Dice(6)
         val diceRoll = dice.roll()
         // show results of roll on screen
-        val resultTextView: TextView = findViewById(R.id.textView)
-        resultTextView.text = diceRoll.toString()
+        val diceImage : ImageView = findViewById(R.id.imageView)
+        val drawableResource = when (diceRoll){
+            1 -> (R.drawable.dice_1)
+            2 -> (R.drawable.dice_2)
+            3 -> (R.drawable.dice_3)
+            4 -> (R.drawable.dice_4)
+            5 -> (R.drawable.dice_5)
+            else-> (R.drawable.dice_6)
+        }
+        diceImage.setImageResource(drawableResource)
+
     }
 
 
